@@ -1,0 +1,176 @@
+<doctype html>
+<html>
+	<head>
+		<title>动画</title>
+		<meta charset="utf-8"/>
+		<style type="text/css">
+			body{
+				background:url(../image/background.gif);
+			}
+			.out{
+				width:200px;
+				height:50px;
+				border-radius:25px;
+				margin:10px auto;
+				border:1px #cecece solid;
+				background:rgba(0,0,0,0.6);
+				
+			}
+			.out:hover{
+				
+			}
+			.left{
+				width:100px;
+				height:50px;
+				
+				border-top-left-radius:25px;
+				border-bottom-left-radius:25px;
+				background:rgba(0,0,0,0.6);
+				font-size:20px;
+				text-align:center;
+				line-height:50px;
+				-webkit-transition: all 1s;
+				float:left;
+			}
+			.left:hover{
+				background:rgba(0,0,0,0.8);
+				cursor:pointer;
+				color:#fff;
+			}
+			.right{
+				width:100px;
+				height:50px;
+				background:rgba(0,0,0,0.6);
+				border-top-right-radius:25px;
+				border-bottom-right-radius:25px;
+				font-size:20px;
+				text-align:center;
+				line-height:50px;
+				-webkit-transition: all 1s;
+				float:left;
+			}
+			.right:hover{
+				background:rgba(0,0,0,0.8);
+				cursor:pointer;
+				color:#fff;
+			}
+			.slide{
+				width:100px;
+				height:50px;
+				border-radius:25px;
+				margin-left:567px;
+				margin-top:-61px;
+				font-size:20px;
+				text-align:center;
+				line-height:50px;
+				background-color:yellow;
+				-webkit-transition: all 1s;
+				float:left;
+			}
+			.slide:hover{
+				cursor:hand;
+			}
+			.bottom{
+				padding:50px;
+				width:620px;
+				height:500px;
+				margin:10px auto;
+				perspective:600px;
+			}
+			.bottom1{
+				width:300px;
+				height:400px;
+				background-color:red;
+				border-radius:10px;
+				margin:auto;
+				color:#fff;
+				text-align:center;
+				font-size:40px;
+				line-height:300px;
+				-webkit-transition: all 2s;
+				float:left;
+			}
+			.bottom2{
+				width:300px;
+				height:400px;
+				background-color:red;
+				border-radius:10px;
+				margin-left:20px;
+				color:#fff;
+				text-align:center;
+				font-size:40px;
+				line-height:300px;
+				-webkit-transition: all 2s;
+				float:left;
+			}
+<!--			.redbackline1{
+				width:100px;
+				border-top:#fff solid 2px;
+				margin-left:0px;
+				margin-top:-200px;
+				transform:rotate(45deg);
+			}
+			.redbackline2{
+				height:100px;
+				border-left:#fff solid 2px;
+				margin-left:0px;
+				margin-top:0px;
+				transform:rotate(45deg);
+			}
+-->
+		</style>
+		
+	</head>
+	<body>
+		<div class="container">
+			<div>
+				<div class="out">
+					<div class="left" id="left" onclick="out_left_click()">
+						1
+					</div>
+					<div class="right" id="right" onclick="out_right_click()">
+						2
+					</div>
+				</div>
+				<div class="slide" id="slide">
+					1
+				</div>
+			</div>
+			<div class="bottom">
+				<div class="bottom1">
+					
+				</div>
+				<div class="bottom2" id="bottom2" onclick="change2()">
+					恭喜发财
+<!--				<div class="redbackline1">
+						
+					</div>
+					<div class="redbackline2">
+						
+					</div>
+-->
+				</div>
+			</div>
+			
+		</div>
+		<script type="text/javascript">
+			function out_right_click(){
+				var right=document.getElementById("slide");
+				right.style.transform="translate(100px,0px)";
+				bottom2.style.transform="rotateY(360deg)";
+				right.innerHTML="2";
+			}
+			function out_left_click(){
+				var left=document.getElementById("slide");
+				left.style.transform="translate(0px,0px)";
+				bottom2.style.transform="rotateY(0deg)";
+				left.innerHTML="1";
+			}
+			function change2(){
+				bottom2.innerHTML="抢光了";
+				setTimeout("bottom2.innerHTML='恭喜发财'",1000 )
+			}
+		</script>
+	</body>
+</html>
+
